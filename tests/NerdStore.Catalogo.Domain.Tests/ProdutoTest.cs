@@ -1,6 +1,7 @@
-using NerdStore.Core.DomainObjects;
 using System;
 using Xunit;
+using NerdStore.Core.DomainObjects;
+using NerdStore.Catalogo.Domain.Entities;
 
 namespace NerdStore.Catalogo.Domain.Tests
 {
