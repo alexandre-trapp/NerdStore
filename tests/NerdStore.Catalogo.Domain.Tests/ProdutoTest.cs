@@ -48,7 +48,7 @@ namespace NerdStore.Catalogo.Domain.Tests
                     "imagem",
                     new Dimensoes(1, 1, 1)));
 
-            Assert.Equal("O campo Valor do produto não pode ser menor ou igual a zero.", ex.Message);
+            Assert.Equal("O campo Valor do produto não pode ser menor que 1.", ex.Message);
 
             ex = Assert.Throws<DomainException>(() =>
                 new Produto(
