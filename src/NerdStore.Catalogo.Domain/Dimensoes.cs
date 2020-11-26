@@ -10,9 +10,9 @@ namespace NerdStore.Catalogo.Domain
 
         public Dimensoes(decimal altura, decimal largura, decimal profundidade)
         {
-            Validacoes.ValidarSeMenorIgualMinimo(altura, 0, "O campo Altura deve ser maior que 0");
-            Validacoes.ValidarSeMenorIgualMinimo(largura, 0, "O campo Largura deve ser maior que 0");
-            Validacoes.ValidarSeMenorIgualMinimo(profundidade, 0, "O campo Profundidade deve ser maior que 0");
+            Validacoes.ValidarSeMenorQue(altura, 0, "O campo Altura deve ser maior que 0");
+            Validacoes.ValidarSeMenorQue(largura, 0, "O campo Largura deve ser maior que 0");
+            Validacoes.ValidarSeMenorQue(profundidade, 0, "O campo Profundidade deve ser maior que 0");
 
             Altura = altura;
             Largura = largura;
