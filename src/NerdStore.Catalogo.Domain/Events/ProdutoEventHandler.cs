@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using System;
+using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
 using NerdStore.Catalogo.Domain.Repositories;
@@ -14,9 +15,11 @@ namespace NerdStore.Catalogo.Domain.Events
 
         public async Task Handle(ProdutoAbaixoEstoqueEvent mensagem, CancellationToken cancellationToken)
         {
-            var produto = _produtoRepository.ObterPorId(mensagem.AggregateId);
+            var produto = await _produtoRepository.ObterPorId(mensagem.AggregateId);
 
-            // enviar um email para aquisição de mais produtos;
+            Console.WriteLine($"Evento 'ProdutoAbaixoEstoqueEvent' recebido - Produto {produto.ToString()} ");
+
+            // poderia enviar um email para aquisição de mais produtos;
         }
     }
 }

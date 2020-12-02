@@ -83,5 +83,10 @@ namespace NerdStore.Catalogo.Domain.Entities
             Validacoes.ValidarSeMenorQue(Valor, 1, "O campo Valor do produto não pode ser menor que 1.");
             Validacoes.ValidarSeVazio(Imagem, "O campo Imagem do produto não pode estar vazio.");
         }
+
+        public override string ToString()
+        {
+            return $"Nome: {Nome} - Descrição - {Descricao} - Quantidade em estoque: {QuantidadeEstoque}";
+        }
     }
 }

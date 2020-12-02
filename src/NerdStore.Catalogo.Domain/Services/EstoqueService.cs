@@ -32,7 +32,10 @@ namespace NerdStore.Catalogo.Domain.Services
 
             // TODO: quantidade de estoque baixo poderia ser parametrizável
             if (produto.QuantidadeEstoque < 10)
+            {
+                Console.WriteLine($"Evento 'ProdutoAbaixoEstoqueEvent' enviado");
                 await _mediatorHandler.PublicarEvento(new ProdutoAbaixoEstoqueEvent(produto.Id, produto.QuantidadeEstoque));
+            }
 
             _produtoRepository.Atualizar(produto);
             return await _produtoRepository.UnitOfWork.Commit();
